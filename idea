@@ -1,0 +1,7 @@
+#!/bin/sh
+TYPE=$(gum choose "Business" "Content" "Project" "Random")
+
+SUMMARY=$(gum input --value "$TYPE: " --placeholder "What's the idea? 💡")
+DESCRIPTION=$(gum write --placeholder "Please till a lil more about it..")
+
+gum confirm "Is it okay?" && echo -e "- [] $SUMMARY \n\t- $DESCRIPTION" >> ~/Documents/ideas.md
